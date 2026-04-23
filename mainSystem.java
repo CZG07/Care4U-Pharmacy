@@ -196,6 +196,13 @@ private double nextCustomer = 0.0;
     //Add Product Function
     private class InsertBtnListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            String name = jtfName.getText();
+            String code=jtfCode.getText();
+            int stock = Integer.parseInt(jtfStock.getText());
+            double price = Double.parseDouble(jtfPrice.getText());
+
+            product p = new product(name, code, stock, price);
+
             if (stmt == null) {
                 JOptionPane.showMessageDialog(null, "ERROR: DATABASE CONNECTION FAILED...");
                 return;
